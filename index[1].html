@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0f2747">
+<meta name="description" content="Turn invoices into clean, reviewable spreadsheet data with AI-powered invoice automation.">
+<title>Ledgerly — AI Invoice Automation</title>
+<style>
+:root{--navy:#102746;--navy2:#173a63;--blue:#3478f6;--cyan:#35c4c9;--ink:#15243b;--muted:#69788d;--line:#e2eaf3;--bg:#f5f8fc;--white:#fff;--green:#14966d;--shadow:0 18px 55px rgba(22,48,82,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button{cursor:pointer}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.5px;font-size:21px;color:var(--navy)}.brandmark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;box-shadow:0 7px 16px #3478f633}.nav{display:flex;align-items:center;gap:28px}.nav a{color:#596a80;text-decoration:none;font-size:14px;font-weight:600}.nav a:hover{color:var(--blue)}.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:750;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none}.btn-primary{background:var(--blue);color:white;box-shadow:0 8px 20px #3478f62e}.btn-primary:hover{background:#2267e8;transform:translateY(-1px)}.btn-light{background:#edf4ff;color:#2457a8}.hero{padding:58px 0 62px;background:radial-gradient(ellipse at 75% 30%,#dcefff 0,transparent 35%),linear-gradient(130deg,#fff 0%,#f5f9ff 60%,#eaf8f9 100%);border-top:1px solid #edf2f7;border-bottom:1px solid var(--line);overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:46px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#2459a5;background:#eaf2ff;border:1px solid #d8e7ff;padding:7px 11px;border-radius:100px;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase}.hero h1{font-size:clamp(38px,5vw,58px);line-height:1.06;letter-spacing:-2.2px;margin:20px 0 18px;color:var(--navy)}.hero h1 span{background:linear-gradient(90deg,var(--blue),#14a6b7);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:17px;max-width:560px;color:#63738a;margin:0 0 25px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.trustline{display:flex;gap:17px;flex-wrap:wrap;margin-top:25px;color:#64768d;font-size:12px;font-weight:650}.trustline span{display:flex;gap:7px;align-items:center}.check{width:17px;height:17px;border-radius:50%;display:inline-grid;place-items:center;background:#dcf8ed;color:#07835d;font-size:11px;font-weight:900}.mockup{position:relative;min-height:390px;display:grid;place-items:center}.glow{position:absolute;width:360px;height:330px;border-radius:50%;background:linear-gradient(135deg,#cfe3ff,#c8f4ef);filter:blur(2px);opacity:.75}.dashboard{position:relative;width:min(100%,470px);background:white;border:1px solid #dce7f3;border-radius:18px;box-shadow:0 30px 80px #173a6325;overflow:hidden;transform:rotate(1deg)}.dash-head{padding:15px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #edf1f6}.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:#d7e0eb}.dash-title{font-size:12px;font-weight:800;color:#29415e}.dash-body{padding:18px}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{padding:12px;background:#f7faff;border:1px solid #edf2f8;border-radius:12px}.metric small{display:block;color:#7b8ba0;font-size:10px}.metric strong{display:block;font-size:20px;color:var(--navy);margin-top:3px}.metric strong em{font-size:10px;color:var(--green);font-style:normal}.table-mock{margin-top:13px;border:1px solid #e8eef5;border-radius:12px;overflow:hidden}.table-line{display:grid;grid-template-columns:1.5fr 1fr 1fr;padding:11px 12px;gap:8px;font-size:10px;color:#60738b;border-bottom:1px solid #edf2f7}.table-line:first-child{background:#f6f9fd;color:#334e70;font-weight:800}.table-line:last-child{border-bottom:0}.pill{font-size:10px;color:#0a8a64;background:#e4f8ef;padding:4px 7px;border-radius:100px;font-weight:800}.float-note{position:absolute;right:-3px;bottom:18px;background:white;border:1px solid #e0e9f3;box-shadow:var(--shadow);padding:13px 16px;border-radius:13px;font-size:12px;font-weight:800;color:#264565;display:flex;gap:10px;align-items:center}.float-icon{width:32px;height:32px;border-radius:10px;background:#e7f8f3;display:grid;place-items:center;color:#0d9a70}.section{padding:74px 0}.section-head{text-align:center;max-width:690px;margin:0 auto 35px}.section-head .eyebrow{margin-bottom:12px}.section h2{font-size:clamp(28px,3.2vw,39px);letter-spacing:-1.2px;line-height:1.15;color:var(--navy);margin:0 0 13px}.section-head p{margin:0;color:var(--muted);font-size:16px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:white;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 5px 18px #142b4906}.feature-icon{width:46px;height:46px;border-radius:14px;background:#eaf2ff;color:#286be7;display:grid;place-items:center;margin-bottom:18px}.feature:nth-child(2) .feature-icon{background:#e4f8f5;color:#0a938e}.feature:nth-child(3) .feature-icon{background:#f0eaff;color:#7650d8}.feature h3{margin:0 0 8px;color:var(--navy);font-size:18px}.feature p{margin:0;color:var(--muted);font-size:14px}.how{background:#edf4fb}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.step{position:relative;background:white;border:1px solid #dfe9f4;border-radius:18px;padding:25px}.step-no{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:var(--navy);color:white;font-weight:800;margin-bottom:18px}.step h3{margin:0 0 8px;color:var(--navy)}.step p{margin:0;color:var(--muted);font-size:14px}.demo-section{padding-top:76px}.demo-shell{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px;align-items:start}.demo-copy{padding:20px 0}.demo-copy p{color:var(--muted)}.demo-panel{background:white;border:1px solid var(--line);border-radius:20px;padding:25px;box-shadow:var(--shadow)}.dropzone{border:1.5px dashed #a9c7ed;border-radius:15px;background:#f7fbff;padding:27px;text-align:center;transition:.2s}.dropzone.drag{background:#eaf3ff;border-color:var(--blue)}.upload-icon{width:50px;height:50px;border-radius:15px;background:#e4efff;color:var(--blue);display:grid;place-items:center;margin:0 auto 13px;font-size:23px}.dropzone h3{margin:0 0 4px;color:var(--navy);font-size:16px}.dropzone p{font-size:12px;color:#8190a4;margin:0 0 15px}.hidden{display:none}.file-meta{font-size:12px;color:#536a84;margin-top:10px;overflow-wrap:anywhere}.demo-table{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px}.demo-table th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:#8290a3;background:#f7f9fc}.demo-table th,.demo-table td{padding:12px 10px;border-bottom:1px solid #edf1f6}.demo-table input{width:100%;min-width:55px;border:1px solid transparent;border-radius:6px;padding:6px 5px;color:#213954;background:transparent}.demo-table input:focus{outline:2px solid #c5dcff;border-color:#a5c8ff;background:white}.demo-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:17px}.notice{font-size:12px;color:#78889b;margin-top:13px}.status{font-size:12px;font-weight:700;color:#0b8c68;min-height:18px;margin-top:10px}.pricing{background:linear-gradient(135deg,#102746,#17416b);color:white}.pricing .section-head h2{color:white}.pricing .section-head p{color:#c2d0e1}.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.price-card{background:#ffffff0b;border:1px solid #ffffff25;border-radius:18px;padding:25px}.price-card.highlight{background:white;color:var(--navy);border-color:white;box-shadow:0 18px 45px #06172b55}.price-card h3{margin:0 0 7px;font-size:17px}.price-card p{font-size:13px;opacity:.75;margin:0 0 19px}.price{font-size:29px;font-weight:850;letter-spacing:-1px}.price small{font-size:12px;font-weight:600;letter-spacing:0;opacity:.65}.price-card ul{padding:0 0 0 18px;margin:18px 0 0;font-size:13px;line-height:2}.price-card .btn{width:100%;margin-top:20px}.price-card:not(.highlight) .btn{background:#ffffff17;color:white;border:1px solid #ffffff38}.cta{padding:72px 0}.cta-box{border-radius:24px;background:linear-gradient(115deg,#e7f1ff,#e6faf7);border:1px solid #d7e9f4;padding:43px;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{margin:0 0 9px;color:var(--navy);font-size:clamp(25px,3vw,34px);letter-spacing:-1px}.cta p{margin:0;color:#62758c}.footer{background:#fff;border-top:1px solid var(--line);padding:24px 0;color:#78889b;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer .brand{font-size:16px}.footer .brandmark{width:28px;height:28px;border-radius:9px}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#102746;color:white;border-radius:12px;padding:12px 18px;font-size:13px;box-shadow:var(--shadow);transition:.25s;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.hero-grid{grid-template-columns:1fr;gap:20px}.mockup{min-height:340px}.features,.steps,.price-grid{grid-template-columns:1fr}.demo-shell{grid-template-columns:1fr}.nav{gap:13px}.nav a:not(.btn){display:none}.cta-box{align-items:flex-start;flex-direction:column}.section{padding:55px 0}}
+@media(max-width:520px){.wrap{width:min(100% - 28px,1160px)}.topbar{height:65px}.brand{font-size:19px}.nav .btn{padding:10px 12px;font-size:12px}.hero{padding:40px 0}.hero h1{font-size:39px;letter-spacing:-1.6px}.hero p{font-size:15px}.mockup{min-height:295px}.glow{width:270px;height:260px}.float-note{right:0;bottom:0}.metric{padding:9px}.metric strong{font-size:16px}.dash-body{padding:12px}.table-line{padding:9px;font-size:9px}.demo-panel{padding:15px}.demo-table th,.demo-table td{padding:8px 4px;font-size:11px}.cta-box{padding:26px}.section-head{text-align:left}.section-head p{font-size:14px}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+</head>
+<body>
+<header class="wrap topbar">
+  <a class="brand" href="#" aria-label="Ledgerly home"><span class="brandmark">✦</span> ledgerly</a>
+  <nav class="nav" aria-label="Main navigation"><a href="#features">Features</a><a href="#how">How it works</a><a href="#pricing">Pricing</a><a class="btn btn-primary" href="#demo">Try the demo <span>↗</span></a></nav>
+</header>
+<main>
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <span class="eyebrow">✦ AI-powered invoice workflow</span>
+   <h1>Invoices in.<br><span>Clarity out.</span></h1>
+   <p>Turn invoices and receipts into structured, spreadsheet-ready data. Spend less time on manual entry and more time moving your business forward.</p>
+   <div class="hero-actions"><a class="btn btn-primary" href="#demo">Explore the demo <span>→</span></a><a class="btn btn-light" href="#how">See how it works</a></div>
+   <div class="trustline"><span><i class="check">✓</i> Human-reviewed results</span><span><i class="check">✓</i> Excel-ready exports</span><span><i class="check">✓</i> Built for busy teams</span></div>
+  </div>
+  <div class="mockup" aria-label="Illustration of invoice dashboard">
+   <div class="glow"></div><div class="dashboard">
+    <div class="dash-head"><div class="dots"><i></i><i></i><i></i></div><span class="dash-title">WORKSPACE / OVERVIEW</span><span class="pill">● All systems ready</span></div>
+    <div class="dash-body"><div class="metric-row"><div class="metric"><small>Documents processed</small><strong>1,284</strong></div><div class="metric"><small>Time saved</small><strong>36h <em>↗</em></strong></div><div class="metric"><small>Needs review</small><strong>08</strong></div></div>
+     <div class="table-mock"><div class="table-line"><span>DOCUMENT</span><span>STATUS</span><span>AMOUNT</span></div><div class="table-line"><span>Invoice_1042.pdf</span><span><span class="pill">Verified</span></span><span>$1,320.00</span></div><div class="table-line"><span>Supply_order.pdf</span><span><span class="pill">Verified</span></span><span>$845.50</span></div><div class="table-line"><span>Receipt_083.jpg</span><span style="color:#bd7a15">Review</span><span>$218.75</span></div></div>
+    </div>
+   </div><div class="float-note"><span class="float-icon">✓</span><span>Clean data, ready to export</span></div>
+  </div>
+ </div>
+</section>
+<section class="section" id="features"><div class="wrap">
+ <div class="section-head"><span class="eyebrow">Less admin. More momentum.</span><h2>Your invoice workflow,<br>made simpler.</h2><p>A practical workflow that combines AI-assisted extraction with clear review controls—so your team stays in charge.</p></div>
+ <div class="features">
+  <article class="feature"><div class="feature-icon">▤</div><h3>Extract the essentials</h3><p>Capture invoice numbers, vendors, dates, taxes and totals from common business documents.</p></article>
+  <article class="feature"><div class="feature-icon">◎</div><h3>Review with confidence</h3><p>See the extracted information in an editable table. Check important values before using them.</p></article>
+  <article class="feature"><div class="feature-icon">↗</div><h3>Export clean data</h3><p>Move reviewed rows into CSV-compatible workflows for spreadsheets and back-office tools.</p></article>
+ </div>
+</div></section>
+<section class="section how" id="how"><div class="wrap">
+ <div class="section-head"><span class="eyebrow">A clear three-step process</span><h2>From document to usable data.</h2><p>Keep the process straightforward, transparent and easy to review.</p></div>
+ <div class="steps">
+  <article class="step"><div class="step-no">01</div><h3>Upload</h3><p>Choose your document or drop it into the workspace. PDF, JPG and PNG are supported in the demo.</p></article>
+  <article class="step"><div class="step-no">02</div><h3>Review</h3><p>Check the extracted fields and edit anything that needs correcting before you export.</p></article>
+  <article class="step"><div class="step-no">03</div><h3>Export</h3><p>Download a clean CSV file that opens in Excel, Google Sheets and other spreadsheet tools.</p></article>
+ </div>
+</div></section>
+<section class="section demo-section" id="demo"><div class="wrap">
+ <div class="demo-shell">
+  <div class="demo-copy"><span class="eyebrow">Interactive sample</span><h2 style="font-size:36px;letter-spacing:-1.2px;line-height:1.12;color:var(--navy)">Try the invoice workspace.</h2><p>Upload a PDF or image invoice, run in-browser OCR, review the extracted fields, and export the corrected results as CSV. Files are processed in your browser.</p><p style="font-size:13px">OCR runs locally in your browser using open-source libraries. Extraction quality depends on scan clarity and layout; always review the results.</p></div>
+  <div class="demo-panel">
+   <div class="dropzone" id="dropzone"><div class="upload-icon">↑</div><h3>Drop an invoice here</h3><p>PDF, JPG or PNG · Demo only, file stays in your browser</p><input class="hidden" id="fileInput" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,.bmp,.tif,.tiff"><button class="btn btn-light" id="chooseFile" type="button">Choose a file</button> <button class="btn btn-primary" id="ocrBtn" type="button" disabled>Extract invoice data</button><div class="file-meta" id="fileMeta">No file selected</div></div>
+   <table class="demo-table" id="invoiceTable"><thead><tr><th>Field</th><th>Sample value (editable)</th></tr></thead><tbody>
+    <tr><td>Vendor</td><td><input aria-label="Vendor" value="ABC Trading Co."></td></tr><tr><td>Invoice no.</td><td><input aria-label="Invoice number" value="INV-00421"></td></tr><tr><td>Date</td><td><input aria-label="Invoice date" value="2026-10-12"></td></tr><tr><td>Subtotal</td><td><input aria-label="Subtotal" value="1200.00"></td></tr><tr><td>Tax</td><td><input aria-label="Tax" value="120.00"></td></tr><tr><td>Total</td><td><input aria-label="Total" value="1320.00"></td></tr>
+   </tbody></table>
+   <div class="demo-actions"><button class="btn btn-primary" id="exportBtn" type="button">↓ Export CSV</button><button class="btn btn-light" id="resetBtn" type="button">Reset sample</button></div><div class="status" id="status" role="status" aria-live="polite"></div><div class="notice">Your selected file is not uploaded to a server by this demo. OCR libraries load from public CDNs. For highly sensitive documents, use an approved secure environment.</div>
+  </div>
+ </div>
+</div></section>
+<section class="section pricing" id="pricing"><div class="wrap">
+ <div class="section-head"><span class="eyebrow" style="background:#ffffff15;color:#d6e7ff;border-color:#ffffff20">Simple starting points</span><h2>Choose a way to get started.</h2><p>Illustrative service packages for early client projects. Final pricing depends on document volume, formats and integrations.</p></div>
+ <div class="price-grid">
+  <article class="price-card"><h3>Starter Pilot</h3><p>For a single workflow</p><div class="price">$99 <small>/ project</small></div><ul><li>One invoice format</li><li>Sample-data workflow</li><li>CSV export</li><li>Basic handover</li></ul><a href="#contact" class="btn">Discuss a pilot</a></article>
+  <article class="price-card highlight"><h3>Business Workflow</h3><p>For a repeatable process</p><div class="price">$299 <small>/ project</small></div><ul><li>Multiple document samples</li><li>Review and validation flow</li><li>Custom export fields</li><li>Setup and walkthrough</li></ul><a href="#contact" class="btn btn-primary">Plan your workflow</a></article>
+  <article class="price-card"><h3>Care & Support</h3><p>For ongoing improvements</p><div class="price">$49 <small>/ month</small></div><ul><li>Basic maintenance</li><li>Small workflow updates</li><li>Error and usage checks</li><li>Email support</li></ul><a href="#contact" class="btn">Ask about support</a></article>
+ </div>
+ <p style="text-align:center;color:#b9c9dc;font-size:12px;margin-top:22px">Example USD pricing for demonstration only—not a live checkout or binding offer.</p>
+</div></section>
+<section class="cta" id="contact"><div class="wrap"><div class="cta-box"><div><h2>Ready to simplify invoice processing?</h2><p>Tell us about your workflow and start with one practical use case.</p></div><a class="btn btn-primary" href="mailto:hello@example.com?subject=Invoice%20automation%20enquiry">Discuss a project ↗</a></div></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div class="brand"><span class="brandmark">✦</span> ledgerly</div><span>AI-assisted invoice workflows, with human review.</span><span>© <span id="year"></span> Ledgerly · Demo website</span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const $=id=>document.getElementById(id);
+$("year").textContent=new Date().getFullYear();
+const fileInput=$("fileInput"), dropzone=$("dropzone"), ocrBtn=$("ocrBtn");
+let selectedFile=null;
+const originalValues=["ABC Trading Co.","INV-00421","2026-10-12","1200.00","120.00","1320.00"];
+$("chooseFile").addEventListener("click",()=>fileInput.click());
+function setStatus(msg, bad=false){$("status").textContent=msg;$("status").style.color=bad?"#b54738":"#0b8c68";}
+function showFile(file){
+ if(!file)return;
+ const ext=file.name.split(".").pop().toLowerCase();
+ if(!["pdf","jpg","jpeg","png","webp","bmp","tif","tiff"].includes(ext)){setStatus("Please choose a PDF or image file.",true);return;}
+ selectedFile=file;
+ $("fileMeta").textContent="Selected: "+file.name+" · "+(file.size/1024<1024?(file.size/1024).toFixed(0)+" KB":(file.size/1024/1024).toFixed(1)+" MB");
+ ocrBtn.disabled=false;
+ setStatus("Ready to extract. OCR runs in your browser; check the results carefully.");
+}
+fileInput.addEventListener("change",e=>showFile(e.target.files[0]));
+["dragenter","dragover"].forEach(ev=>dropzone.addEventListener(ev,e=>{e.preventDefault();dropzone.classList.add("drag")}));
+["dragleave","drop"].forEach(ev=>dropzone.addEventListener(ev,e=>{e.preventDefault();dropzone.classList.remove("drag")}));
+dropzone.addEventListener("drop",e=>{const file=e.dataTransfer.files[0];showFile(file);});
+function csvEscape(v){return '"'+String(v).replace(/"/g,'""')+'"';}
+$("exportBtn").addEventListener("click",()=>{
+ const rows=[["Field","Value"],...Array.from($("invoiceTable").querySelectorAll("tbody tr")).map(tr=>[tr.cells[0].textContent,tr.querySelector("input").value])];
+ const csv=rows.map(r=>r.map(csvEscape).join(",")).join("\r\n");
+ const blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="ledgerly-invoice-data.csv";a.click();URL.revokeObjectURL(url);
+ setStatus("CSV exported. Review all values before using them.");
+});
+$("resetBtn").addEventListener("click",()=>{
+ Array.from($("invoiceTable").querySelectorAll("tbody input")).forEach((el,i)=>el.value=originalValues[i]);
+ fileInput.value="";selectedFile=null;ocrBtn.disabled=true;$("fileMeta").textContent="No file selected";setStatus("Sample values restored.");
+});
+function setField(i,value){if(value!==null&&value!==undefined&&String(value).trim())$("invoiceTable").querySelectorAll("tbody input")[i].value=String(value).trim();}
+function parseInvoiceText(text){
+ const lines=text.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+ const full=lines.join("\n");
+ const firstMatch=(patterns)=>{for(const p of patterns){const m=full.match(p);if(m&&m[1])return m[1].trim();}return null;};
+ const moneyMatches=[...full.matchAll(/(?:[$€£৳]\s*)?(\d[\d,]*\.\d{2})/g)].map(m=>Number(m[1].replace(/,/g,""))).filter(Number.isFinite);
+ const vendor=lines.find(l=>l.length>2&&!/invoice|bill to|ship to|date|total|subtotal|tax|amount due|receipt|www\.|@/.test(l.toLowerCase())&&!/^\W*\d/.test(l));
+ const inv=firstMatch([/(?:invoice\s*(?:no\.?|number|#|id)|inv\.?\s*#?)\s*[:#-]?\s*([A-Z0-9][A-Z0-9/_-]{2,})/i]);
+ const date=firstMatch([/(?:invoice\s*)?date\s*[:#-]?\s*((?:\d{4}[-/.]\d{1,2}[-/.]\d{1,2})|(?:\d{1,2}[-/.]\d{1,2}[-/.]\d{2,4}))/i,/(\d{4}-\d{2}-\d{2})/]);
+ const total=firstMatch([/(?:grand\s*total|amount\s*due|total\s*due|invoice\s*total|total)\s*[:\-]?\s*(?:USD|BDT|[$€£৳])?\s*([\d,]+\.\d{2}|\d[\d,]*)/i]);
+ const subtotal=firstMatch([/(?:sub\s*total|subtotal)\s*[:\-]?\s*(?:USD|BDT|[$€£৳])?\s*([\d,]+\.\d{2}|\d[\d,]*)/i]);
+ const tax=firstMatch([/(?:sales\s*tax|vat|tax)\s*[:\-]?\s*(?:USD|BDT|[$€£৳])?\s*([\d,]+\.\d{2}|\d[\d,]*)/i]);
+ const fmt=v=>v?String(v).replace(/,/g,""):null;
+ return {vendor,inv,date,subtotal:fmt(subtotal),tax:fmt(tax),total:fmt(total),text:full};
+}
+async function getImageForOCR(file){
+ const type=file.name.split(".").pop().toLowerCase();
+ if(type!=="pdf")return URL.createObjectURL(file);
+ if(!window.pdfjsLib)throw new Error("PDF engine is still loading. Please wait a moment and try again.");
+ pdfjsLib.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+ const bytes=await file.arrayBuffer(),pdf=await pdfjsLib.getDocument({data:bytes}).promise;
+ const page=await pdf.getPage(1),viewport=page.getViewport({scale:2});
+ const canvas=document.createElement("canvas");canvas.width=viewport.width;canvas.height=viewport.height;
+ await page.render({canvasContext:canvas.getContext("2d"),viewport}).promise;
+ return canvas.toDataURL("image/png");
+}
+ocrBtn.addEventListener("click",async()=>{
+ if(!selectedFile)return;
+ if(!window.Tesseract){setStatus("OCR engine is still loading. Check your internet connection and try again.",true);return;}
+ ocrBtn.disabled=true;const old=ocrBtn.textContent;ocrBtn.textContent="Processing…";
+ try{
+  setStatus("Preparing document…");
+  const image=await getImageForOCR(selectedFile);
+  setStatus("Reading invoice text. This can take a little while on the first run…");
+  const result=await Tesseract.recognize(image,"eng",{logger:m=>{if(m.status==="recognizing text")setStatus("Recognizing text: "+Math.round((m.progress||0)*100)+"%");}});
+  if(image.startsWith("blob:"))URL.revokeObjectURL(image);
+  const parsed=parseInvoiceText(result.data.text||"");
+  setField(0,parsed.vendor);setField(1,parsed.inv);setField(2,parsed.date);setField(3,parsed.subtotal);setField(4,parsed.tax);setField(5,parsed.total);
+  const found=[parsed.vendor,parsed.inv,parsed.date,parsed.subtotal,parsed.tax,parsed.total].filter(Boolean).length;
+  if(found===0){setStatus("OCR ran, but invoice fields weren't recognized. Enter the values manually or try a clearer scan.",true);}
+  else setStatus("OCR complete: "+found+" of 6 fields detected. Review and correct every value before exporting.");
+  if(!parsed.text.trim())setStatus("No readable text found. Try a higher-resolution scan.",true);
+ }catch(err){console.error(err);setStatus("Could not process this file: "+(err.message||"unexpected error")+". Try a JPG/PNG or another PDF.",true);}
+ finally{ocrBtn.disabled=!selectedFile;ocrBtn.textContent=old;}
+});
+document.querySelectorAll('a[href="#contact"]').forEach(a=>a.addEventListener("click",()=>{}));
+</script>
+</body>
+</html>
